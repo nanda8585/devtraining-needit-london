@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" label="personnal Issue Tacking DB" max_length="40" name="x_58872_needit_personnal_issue_tacking_db" type="collection">
+        <element label="BC Planner" max_length="32" name="bc_planner" reference="x_58872_needit_site_planner" reference_qual="ref_auto_completer=AJAXTableCompleter,ref_ac_columns=site,ref_ac_order_by=site" reference_qual_condition="ref_auto_completer=AJAXTableCompleter,ref_ac_columns=site,ref_ac_order_by=site" type="reference"/>
+        <element label="Location" max_length="32" name="location" reference="x_58872_needit_u_sites" type="reference"/>
+        <element label="Manager_email" max_length="100" name="manager_email" type="string"/>
+        <element label="Manager_ID" max_length="100" name="manager_id" type="string"/>
+        <element label="Manage_Name" max_length="32" name="manage_name" reference="sys_user" type="reference"/>
+        <element label="Mobile Number" max_length="100" name="mobile_number" type="string"/>
+        <element label="Site" max_length="32" name="site" reference="content_site" type="reference"/>
+        <element choice="1" label="State" max_length="100" name="state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Approved" value="Approved"/>
+                <element inactive_on_update="false" label="New" value="New"/>
+                <element inactive_on_update="false" label="Rejected" value="Rejected"/>
+                <element inactive_on_update="false" label="Waiting" value="Waiting"/>
+            </choice>
+        </element>
+        <element label="Uaser_name" max_length="32" name="uaser_name" reference="sys_user" type="reference"/>
+        <element label="User_Email" max_length="100" name="user_email" type="string"/>
+        <element label="User name" max_length="100" name="user_name" type="string"/>
+        <element label="New File Attachment" max_length="40" name="u_file_attachment_1" type="file_attachment"/>
+        <element label="work Phone" max_length="20" name="work_phone" type="string"/>
+        <index name="index">
+            <element name="manage_name"/>
+        </index>
+        <index name="index2">
+            <element name="site"/>
+        </index>
+        <index name="index3">
+            <element name="bc_planner"/>
+        </index>
+        <index name="index4">
+            <element name="uaser_name"/>
+        </index>
+        <index name="index5">
+            <element name="location"/>
+        </index>
+    </element>
+</database>

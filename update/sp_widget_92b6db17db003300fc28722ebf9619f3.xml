@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope) { 
+  var c = this;	
+	var pipelineContainer;
+	var isGtcAdmin=false;
+	var isContentUser=false;
+	var isBuildUser=false;
+	var isNispUser=false;
+	var isNisUser=false;
+	var isClientDeploymentUser=false;	
+	var isIVTeam=false;
+	var isLocalCountry=false;
+	var isPMO=false;
+	var isNispNormalUser=false;
+	c.server.get().then(function(r){			
+			isGtcAdmin=r.data.gtcadmin;
+			isContentUser=r.data.content;
+			isBuildUser=r.data.build;
+			isNispUser=r.data.nisp;
+			isNisUser=r.data.nis;
+			isClientDeploymentUser=r.data.clientdlp;
+		  isIVTeam=r.data.IVTaem;
+		  isLocalCountry=r.data.LocalCountry;
+		  isPMO=r.data.PMO;
+		  isNispNormalUser =r.data.nispUser;
+			var adminUser="admin";
+		
+		  alert ('isNispNormalUser ' + isNispNormalUser);
+			$scope.hidePipelineContainer = true;
+			$scope.hidePipelineTab  = true;
+			$scope.hideContentDesignContainer = true;
+			$scope.hideContentDesignTab  = true;
+			$scope.hideBuildContainer =  true;
+			$scope.hideBuildTab  = true;
+			$scope.hideNISPContainer =  true;
+			$scope.hideNISPTab  = true;
+			$scope.hideNISContainer =  true;
+			$scope.hideNISTab  = true;
+			$scope.hideClientDeploymentContainer =  true;
+			$scope.hideClientDeploymentTab  = true;
+			$scope.hidePipelineNewRecord = false;
+		
+			
+			$scope.hidePipelineArchiveTab =  true;
+			$scope.hideNISPArchiveTab =  true;
+			$scope.hidePipelineArchiveContainer =  true;
+			$scope.hideNISPArchiveContainer =  true;
+		  $scope.hideArchiveMassage  = true;
+
+			$scope.hidePipelineDashboardContainer = true;
+			$scope.hidePipelineDashboardTab  = true;
+			$scope.hideContentDesignDashboardContainer = true;
+			$scope.hideContentDesignDashboardTab  = true;
+			$scope.hideBuildDashboardContainer =  true;
+			$scope.hideBuildDashboardTab  = true;
+			$scope.hideNISPDashboardContainer =  true;
+			$scope.hideNISPDashboardTab  = true;
+			$scope.hideNISDashboardContainer =  true;
+			$scope.hideNISDashboardTab  = true;
+			$scope.hideClientDeploymentDashboardContainer =  true;
+			$scope.hideClientDeploymentDashboardTab  = true;
+	
+
+			
+		if(isGtcAdmin==true){
+			$scope.hidePipelineContainer = false;
+			$scope.hidePipelineTab  = false;
+			$scope.hideContentDesignContainer = false;
+			$scope.hideContentDesignTab  = false;
+			$scope.hideBuildContainer =  false;
+			$scope.hideBuildTab  = false;
+			$scope.hideNISPContainer =  false;
+			$scope.hideNISPTab  = false;
+			$scope.hideNISContainer =  false;
+			$scope.hideNISTab  = false;
+			$scope.hideClientDeploymentContainer =  false;
+			$scope.hideClientDeploymentTab  = false;
+			
+			
+			$scope.hidePipelineArchiveTab =  false;
+			$scope.hideNISPArchiveTab =  false;
+			$scope.hidePipelineArchiveContainer =  false;
+			$scope.hideNISPArchiveContainer =  false;
+			
+			$scope.hidePipelineDashboardContainer = false;
+			$scope.hidePipelineDashboardTab  = false;
+			$scope.hideContentDesignDashboardContainer = false;
+			$scope.hideContentDesignDashboardTab  = false;
+			$scope.hideBuildDashboardContainer =  false;
+			$scope.hideBuildDashboardTab  = false;
+			$scope.hideNISPDashboardContainer =  false;
+			$scope.hideNISPDashboardTab  = false;
+			$scope.hideNISDashboardContainer =  false;
+			$scope.hideNISDashboardTab  = false;
+			$scope.hideClientDeploymentDashboardContainer =  false;
+			$scope.hideClientDeploymentDashboardTab  = false;
+			
+		}else if(isContentUser==true){
+			$scope.hidePipelineContainer = false;
+			$scope.hidePipelineTab  = false;
+			$scope.hideContentDesignContainer = false;
+			$scope.hideContentDesignTab  = false;
+			
+			$scope.hidePipelineArchiveContainer =  false;
+			$scope.hideArchiveMassage  = false;
+			$scope.hideArchivePipelineRecords  = true;
+			
+			$scope.hidePipelineDashboardContainer = false;
+			$scope.hidePipelineDashboardTab  = false;
+			$scope.hideContentDesignDashboardContainer = false;
+			$scope.hideContentDesignDashboardTab  = false;
+			$scope.hideBuildDashboardContainer =  false;
+			$scope.hideBuildDashboardTab  = false;
+			$scope.hideNISPDashboardContainer =  false;
+			$scope.hideNISPDashboardTab  = false;
+			$scope.hideNISDashboardContainer =  false;
+			$scope.hideNISDashboardTab  = false;
+			$scope.hideClientDeploymentDashboardContainer =  false;
+			$scope.hideClientDeploymentDashboardTab  = false;
+			
+		}else if(isBuildUser==true){
+			$scope.hidePipelineContainer = false;
+			$scope.hidePipelineTab  = false;
+			$scope.hideBuildContainer =  false;
+			$scope.hideBuildTab  = false;
+			$scope.hideNISPContainer =  false;
+			$scope.hideNISPTab  = false;
+			$scope.hidePipelineNewRecord =true;
+			
+			$scope.hidePipelineArchiveContainer =  false;
+			$scope.hideArchiveMassage  = false;
+			$scope.hideArchivePipelineRecords  = true;
+			
+			$scope.hidePipelineDashboardContainer = false;
+			$scope.hidePipelineDashboardTab  = false;
+			$scope.hideContentDesignDashboardContainer = false;
+			$scope.hideContentDesignDashboardTab  = false;
+			$scope.hideBuildDashboardContainer =  false;
+			$scope.hideBuildDashboardTab  = false;
+			$scope.hideNISPDashboardContainer =  false;
+			$scope.hideNISPDashboardTab  = false;
+			$scope.hideNISDashboardContainer =  false;
+			$scope.hideNISDashboardTab  = false;
+			$scope.hideClientDeploymentDashboardContainer =  false;
+			$scope.hideClientDeploymentDashboardTab  = false;
+			
+		}else if(isNispUser==true){
+			$scope.hideNISPContainer =  false;
+			$scope.hideNISPTab  = false;
+			pipelineContainer=angular.element('#pipelineContainer');
+	    pipelineContainer.removeClass("in active");
+			var NISPContainer=angular.element('#NISPContainer');
+      NISPContainer.addClass("in active");
+			
+			$scope.hideNISPArchiveTab =  false;
+			$scope.hideNISPArchiveContainer =  false;
+			pipelineArchiveContainer=angular.element('#pipelineArchiveContainer');
+	    pipelineArchiveContainer.removeClass("in active");
+			var NISPArchiveContainer=angular.element('#NISPArchiveContainer');
+      NISPArchiveContainer.addClass("in active")
+			
+			$scope.hidePipelineDashboardContainer = false;
+			$scope.hidePipelineDashboardTab  = false;
+			$scope.hideContentDesignDashboardContainer = false;
+			$scope.hideContentDesignDashboardTab  = false;
+			$scope.hideBuildDashboardContainer =  false;
+			$scope.hideBuildDashboardTab  = false;
+			$scope.hideNISPDashboardContainer =  false;
+			$scope.hideNISPDashboardTab  = false;
+			$scope.hideNISDashboardContainer =  false;
+			$scope.hideNISDashboardTab  = false;
+			$scope.hideClientDeploymentDashboardContainer =  false;
+			$scope.hideClientDeploymentDashboardTab  = false;
+			
+		
+		}else if(isNisUser==true ){
+			$scope.hideNISContainer =  false;
+			$scope.hideNISTab  = false;
+			pipelineContainer=angular.element('#pipelineContainer');
+	    pipelineContainer.removeClass("in active");
+		  var NISContainer=angular.element('#NISContainer');
+      NISContainer.addClass("in active");
+			
+			$scope.hidePipelineArchiveContainer =  false;
+			$scope.hideArchiveMassage  = false;
+			$scope.hideArchivePipelineRecords  = true;
+			
+			$scope.hidePipelineDashboardContainer = false;
+			$scope.hidePipelineDashboardTab  = false;
+			$scope.hideContentDesignDashboardContainer = false;
+			$scope.hideContentDesignDashboardTab  = false;
+			$scope.hideBuildDashboardContainer =  false;
+			$scope.hideBuildDashboardTab  = false;
+			$scope.hideNISPDashboardContainer =  false;
+			$scope.hideNISPDashboardTab  = false;
+			$scope.hideNISDashboardContainer =  false;
+			$scope.hideNISDashboardTab  = false;
+			$scope.hideClientDeploymentDashboardContainer =  false;
+			$scope.hideClientDeploymentDashboardTab  = false;
+			
+		
+		}else if(isClientDeploymentUser==true){
+			$scope.hideClientDeploymentContainer =  false;
+			$scope.hideClientDeploymentTab  = false;
+			pipelineContainer=angular.element('#pipelineContainer');
+	    pipelineContainer.removeClass("in active");
+			var clientDeploymentContainer=angular.element('#clientDeploymentContainer');
+      clientDeploymentContainer.addClass("in active");
+			
+			$scope.hidePipelineArchiveContainer =  false;
+			$scope.hideArchiveMassage  = false;
+			$scope.hideArchivePipelineRecords  = true;
+			
+			$scope.hidePipelineDashboardContainer = false;
+			$scope.hidePipelineDashboardTab  = false;
+			$scope.hideContentDesignDashboardContainer = false;
+			$scope.hideContentDesignDashboardTab  = false;
+			$scope.hideBuildDashboardContainer =  false;
+			$scope.hideBuildDashboardTab  = false;
+			$scope.hideNISPDashboardContainer =  false;
+			$scope.hideNISPDashboardTab  = false;
+			$scope.hideNISDashboardContainer =  false;
+			$scope.hideNISDashboardTab  = false;
+			$scope.hideClientDeploymentDashboardContainer =  false;
+			$scope.hideClientDeploymentDashboardTab  = false;
+			
+		}else if(isIVTeam==true || isLocalCountry==true ||isPMO ==true){
+			$scope.hidePipelineContainer = false;
+			$scope.hidePipelineTab  = false;
+			$scope.hideBuildContainer =  false;
+			$scope.hideBuildTab  = false;
+			$scope.hidePipelineNewRecord =true;
+			
+			$scope.hidePipelineArchiveContainer =  false;
+			$scope.hideArchiveMassage  = false;
+			$scope.hideArchivePipelineRecords  = true;
+			
+			$scope.hidePipelineDashboardContainer = false;
+			$scope.hidePipelineDashboardTab  = false;
+			$scope.hideContentDesignDashboardContainer = false;
+			$scope.hideContentDesignDashboardTab  = false;
+			$scope.hideBuildDashboardContainer =  false;
+			$scope.hideBuildDashboardTab  = false;
+			$scope.hideNISPDashboardContainer =  false;
+			$scope.hideNISPDashboardTab  = false;
+			$scope.hideNISDashboardContainer =  false;
+			$scope.hideNISDashboardTab  = false;
+			$scope.hideClientDeploymentDashboardContainer =  false;
+			$scope.hideClientDeploymentDashboardTab  = false;
+			
+		}else if(isNispNormalUser==true){
+			$scope.hideNISPContainer =  false;
+			$scope.hideNISPTab  = false;
+			pipelineContainer=angular.element('#pipelineContainer');
+	    pipelineContainer.removeClass("in active");
+			var NISPContainer1=angular.element('#NISPContainer');
+      NISPContainer1.addClass("in active");
+			
+		  $scope.hidePipelineArchiveContainer =  false;
+			$scope.hideArchiveMassage  = false;
+			$scope.hideArchivePipelineRecords  = true;
+			
+			$scope.hidePipelineDashboardContainer = false;
+			$scope.hidePipelineDashboardTab  = false;
+			$scope.hideContentDesignDashboardContainer = false;
+			$scope.hideContentDesignDashboardTab  = false;
+			$scope.hideBuildDashboardContainer =  false;
+			$scope.hideBuildDashboardTab  = false;
+			$scope.hideNISPDashboardContainer =  false;
+			$scope.hideNISPDashboardTab  = false;
+			$scope.hideNISDashboardContainer =  false;
+			$scope.hideNISDashboardTab  = false;
+			$scope.hideClientDeploymentDashboardContainer =  false;
+			$scope.hideClientDeploymentDashboardTab  = false;
+			
+		
+		}
+		
+	
+	});
+}
+
+
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>
+.gtcContainer{   
+  padding: 10px; 
+ color: #fff;  
+}
+a:hover,a:focus{
+    text-decoration: none;
+    outline: none;
+}
+#accordion .panel{
+    border: none;
+    border-radius: 0;
+    margin-bottom: 5px;
+    box-shadow: none;
+    background: transparent;
+}
+#accordion .panel-heading{
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    position: relative;
+    background: transparent;
+}
+#accordion .panel-title a{
+    display: block;
+    padding: 20px 30px;
+    margin: 0;
+    background: rgba(0,0,0,0.4);
+    font-size: 17px;
+    font-weight: bold;
+    color: #fff;  
+    letter-spacing: 1px;
+    position: relative;   
+}
+#accordion .panel-title a:before,
+#accordion .panel-title a.collapsed:before{
+    content: "";
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+#accordion .panel-title a:after,
+#accordion .panel-title a.collapsed:after{
+    content: "";
+    width: 2px;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    bottom: 18px;
+    right: 39px;
+    transition: all 0.3s ease 0s;
+}
+#accordion .panel-title a:after{ height: 0; }
+#accordion .panel-body{
+    padding: 20px 30px;
+    background: rgba(0,0,0,0.1);
+    border-top: 2px solid #000;
+    font-size: 15px;
+    color: #fff;
+    line-height: 28px;
+    letter-spacing: 1px;
+}
+
+.tabContent {
+  padding:15px; 
+  color:#fff;
+}
+.text-color{
+   color:#fff;
+}
+a:hover,a:focus{
+    outline: none;
+    text-decoration: none;
+}
+.tab .nav-tabs{
+    border: none;
+    margin-bottom: 20px;
+}
+.tab .nav-tabs li a{
+    padding: 10px 20px;
+    margin-right: 5px;
+    background: rgba(0,0,0,0.4);
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    transition: all 0.4s ease-in 0s;
+}
+.tab .nav-tabs li a:hover{
+    color: rgba(0,0,0,0.4);
+    background: #fff;
+    border: 2px solid #fff;
+}
+.tab .nav-tabs li.active a{
+    color: #092c4f;
+    border: 2px solid #fff;
+}
+.tab .nav-tabs li a:before{
+    content: "";
+    display: block;
+    width: 300px;
+    height: 200px;
+    border-radius: 50%;
+    background: #fff;
+    margin-top: -100px;
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    opacity: 0.3;
+    z-index: -1;
+    transform: scale(0);
+    transition: all 0.4s ease-in 0.1s;
+}
+.tab .nav-tabs li a:hover:before,
+.tab .nav-tabs li.active a:before{
+    opacity: 1;
+    transform: scale(2);
+}
+.tab .tab-content{
+    padding: 10px 15px;   
+    font-size: 15px;
+    color: #fff;
+    line-height: 10px;
+    letter-spacing: 1px; 
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+.tab .tab-content h3{
+    font-size: 20px;
+    margin-top: 0;
+}
+@media only screen and (max-width: 479px){
+    .tab .nav-tabs li{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .tab .nav-tabs li a:hover:before,
+    .tab .nav-tabs li.active a:before{
+        transform: scale(10);
+    }
+}
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>gtc1</id>
+        <internal>false</internal>
+        <link/>
+        <name>gtc1</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function(){
+	var gr = $sp.getInstanceRecord();
+	//data.href = $sp.getMenuHREF(gr);
+//	data.target = options.target || "";
+	data.gtcadmin=gs.hasRole('x_tnmu2_gtc_mgmt_s.GTC Admin_role');
+	data.content=gs.hasRole('x_tnmu2_gtc_mgmt_s.Content Design User');
+	data.build=gs.hasRole('x_tnmu2_gtc_mgmt_s.IDC BUILD team users_role');
+	data.nisp = gs.hasRole('x_tnmu2_gtc_mgmt_s.NISP Admin user');
+	data.nis=gs.hasRole('x_tnmu2_gtc_mgmt_s.NIS User');
+	data.clientdlp=gs.hasRole('x_tnmu2_gtc_mgmt_s.Client Deployment User');
+	data.IVTaem=gs.hasRole('x_tnmu2_gtc_mgmt_s.IV Team users');
+	data.nispUser=gs.hasRole('x_tnmu2_gtc_mgmt_s.NISP User');
+	data.LocalCountry=gs.hasRole('x_tnmu2_gtc_mgmt_s.Local_Country_Users');
+	data.PMO=gs.hasRole('x_tnmu2_gtc_mgmt_s.PMO Users');
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-13 08:45:41</sys_created_on>
+        <sys_id>92b6db17db003300fc28722ebf9619f3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>gtc1</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sp_widget_92b6db17db003300fc28722ebf9619f3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-13 08:46:33</sys_updated_on>
+        <template><![CDATA[<div class="gtcContainer">  
+  <h3 align="center"><b>Welcome to GTC Management System </b></h3>
+  <div ng-app="gtcApp" ng-controller="gtcCtrl" class="panel-group" id="accordion" aria-multiselectable="true">
+          <div id="module1" class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" aria-expanded="true" href="#collapseOne">GTC Management System </a>
+                </h4>
+            </div>
+               <div id="collapseOne" class="panel-collapse collapse in tab">
+                <div class="panel-body">
+                   <ul class="nav nav-tabs">
+                    <li ng-hide="hidePipelineTab" id="pipelineTab" class="active">
+                      <a data-toggle="tab" href="#pipelineContainer" >Pipeline </a>
+                    </li>
+                    <li ng-hide="hideContentDesignTab" id="contentDesignTab">
+                      <a data-toggle="tab" href="#contentDesignContainer" >Content Design</a>                     
+                    </li>
+                    <li ng-hide="hideBuildTab" id="buildTab">
+                      <a data-toggle="tab" href="#buildContainer" >Build</a>                     
+                    </li>     
+                    <li ng-hide="hideNISPTab" id="NISPTab">
+                      <a data-toggle="tab" href="#NISPContainer">NISP & Validation</a>                     
+                    </li>                     
+                    <li ng-hide="hideNISTab" id="NISTab">
+                      <a data-toggle="tab" href="#NISContainer">NIS</a>                     
+                    </li>                     
+                    <li ng-hide="hideClientDeploymentTab" id="clientDeploymentTab">
+                      <a data-toggle="tab" href="#clientDeploymentContainer">Client Deployment</a>                     
+                    </li>
+                  </ul>
+                   <div class="tabContent tab-content tabs">
+                      <div ng-hide="hidePipelineContainer" class="tab-pane fade in active" id="pipelineContainer">
+                        <ul>
+                         <li ng-hide="hidePipelineNewRecord">   
+                           <a  target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_mgmt_system_base.do"> <font color="#fff">Pipeline New Record</font></a>
+                         </li>
+                          <br>
+                          <li>  
+                            <a  target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_mgmt_system_base_list.do"> <font color="#fff"> Pipeline All Records</font></a>
+                         </li>
+                       </ul>  
+                      </div>                 
+                      <div  ng-hide="hideContentDesignContainer" id="contentDesignContainer" class="tab-pane fade">
+                       <ul>
+                         <li>     
+                            <a  target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_content_design_base_list.do"><font color="#fff">Content Design All Records</font></a>
+                         </li>
+                       </ul>
+                     </div>                 
+                     <div ng-hide="hideBuildContainer" id="buildContainer" class="tab-pane fade">
+                       <ul>
+                         <li>     
+                            <a  target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_build_process_base_list.do"><font color="#fff">Build All Records</font></a>
+                         </li>
+                       </ul>
+                   </div>                 
+                    <div  ng-hide="hideNISPContainer" id="NISPContainer" class="tab-pane fade"> 
+                      <ul>
+                         <li>     
+                            <a  target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_nisp_base_list.do"><font color="#fff">NISP All Records</font></a>
+                         </li>
+
+                       </ul>
+                    </div>                  
+                     <div  ng-hide="hideNISContainer" id="NISContainer" class="tab-pane fade">
+                      <ul>
+                         <li>     
+                            <a target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_nis_base_list.do"><font color="#fff">NIS</font></a>
+                         </li>
+                       </ul>
+                    </div>                 
+                     <div ng-hide="hideClientDeploymentContainer" id="clientDeploymentContainer" class="tab-pane fade">
+                      <ul>
+                         <li>     
+                            <a  target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_client_deployment_base_list.do"><font color="#fff">Client Deployment</font></a>
+                         </li>
+                       </ul>
+                     </div> 
+                   </div> 
+                </div>
+            </div>
+       </div> 
+       <div id="module2"  class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#collapseTwo">GTC Management System - Archived Records</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse tab">
+                <div class="panel-body">
+                    <ul class="nav nav-tabs">
+                      <li ng-hide="hidePipelineArchiveTab" id="pipelineArchiveTab" class="active">
+                        <a data-toggle="tab" href="#pipelineArchiveContainer"> Pipeline Archived Records</a>
+                      </li>
+                      <li ng-hide="hideNISPArchiveTab" id="NISPArchiveTab">
+                        <a data-toggle="tab" href="#NISPArchiveContainer">NISP Archived Records</a>
+                      </li>                   
+                   </ul>
+                   <div class="tabContent tab-content tabs">
+                       <div  ng-hide="hidePipelineArchiveContainer" id="pipelineArchiveContainer" class="tab-pane fade in active">    
+                         <li ng-hide="hideArchivePipelineRecords">
+                           <a target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_deleted_records_gtc_mgmt_system_list.do"> <font color="#fff">Pipeline Archived All Records</font></a>
+                         </li>
+                         <br>
+                         <li ng-hide="hideArchiveMassage">
+                              <a  target="_blank" href=""><font color="#fff">Sorry, you do not have access to this module</font></a>
+                         </li>
+                         <br>
+                      </div>                      
+                      <div ng-hide="hideNISPArchiveContainer" id="NISPArchiveContainer"  class="tab-pane fade">                   
+                        <ul>
+                            <li>
+                              <a  target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_deleted_records_gtc_nisp_base_list.do"><font color="#fff">NISP Archived Base Records</font></a>
+                            </li>
+                            <br>
+                             <li>                  
+                                <a  target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_deleted_records_gtc_nisp_mono_multi_cubes_list.do"><font color="#fff">NISP Archived Mono/Multi Records</font></a>
+                             </li>
+                             <br>
+                             <li>                  
+                                <a  target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_deleted_records_gtc_nisp_supercubes_list.do"><font color="#fff">NISP Archived Super Cube Records</font></a>
+                             </li>
+                        </ul>
+                    </div>  
+                  </div> 
+                </div>
+            </div>
+      </div>  
+      <div id="module3" class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#collapseThree">GTC Management System - Dashboards</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse tab">
+                <div class="panel-body">
+                    <ul class="nav nav-tabs">
+                    <li ng-hide="hidePipelineDashboardTab" id="pipelineDashboardTab" class="active">
+                      <a data-toggle="tab" href="#pipelineDashboardContainer" >Pipeline</a>
+                    </li>
+                    <li ng-hide="hideContentDesignDashboardTab" id="contentDesignDashboardTab">
+                      <a data-toggle="tab" href="#contentDesignDashboardContainer" >Content Design</a>                     
+                    </li>
+                    <li ng-hide="hideBuildDashboardTab" id="buildDashboardTab">
+                      <a data-toggle="tab" href="#buildDashboardContainer" >Build</a>                     
+                    </li>     
+                    <li ng-hide="hideNISPDashboardTab" id="NISPDashboardTab">
+                      <a data-toggle="tab" href="#NISPDashboardContainer">NISP & Validation</a>                     
+                    </li>                     
+                    <li ng-hide="hideNISDashboardTab" id="NISDashboardTab">
+                      <a data-toggle="tab" href="#NISDashboardContainer">NIS</a>                     
+                    </li>                     
+                    <li ng-hide="hideClientDeploymentDashboardTab" id="clientDeploymentDashboardTab">
+                      <a data-toggle="tab" href="#clientDeploymentDashboardContainer">Client Deployment</a>                     
+                    </li>
+                  </ul>
+                   <div class="tabContent tab-content tabs">
+                      <div ng-hide="hidePipelineDashboardContainer" class="tab-pane fade in active" id="pipelineDashboardContainer">
+                        <ul>
+                         <li >   
+                           <a  target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_mgmt_system_base.do"> <font color="#fff">Pipeline All Dashboards</font></a>
+                         </li>
+                      
+                      
+                       </ul>  
+                      </div>                 
+                      <div  ng-hide="hideContentDesignDashboardContainer" id="contentDesignDashboardContainer" class="tab-pane fade">
+                       <ul>
+                         <li>     
+                            <a  target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_content_design_base_list.do"><font color="#fff">Content Design All dashboard</font></a>
+                         </li>
+                       </ul>
+                     </div>                 
+                     <div ng-hide="hideBuildDashboardContainer" id="buildDashboardContainer" class="tab-pane fade">
+                       <ul>
+                         <li>     
+                            <a  target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_build_process_base_list.do"><font color="#fff">Build  All Dashboards</font></a>
+                         </li>
+                       </ul>
+                   </div>                 
+                    <div  ng-hide="hideNISPDashboardContainer" id="NISPDashboardContainer" class="tab-pane fade"> 
+                      <ul>
+                         <li>     
+                            <a  target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_nisp_base_list.do"><font color="#fff">NISP All dashboard</font></a>
+                         </li>
+
+                       </ul>
+                    </div>                  
+                     <div  ng-hide="hideNISDashboardContainer" id="NISDashboardContainer" class="tab-pane fade">
+                      <ul>
+                         <li>     
+                            <a target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_nis_base_list.do"><font color="#fff">NIS All Dashboards</font></a>
+                         </li>
+                       </ul>
+                    </div>                 
+                     <div ng-hide="hideClientDeploymentDashboardContainer" id="clientDeploymentDashboardContainer" class="tab-pane fade">
+                      <ul>
+                         <li>     
+                            <a  target="_blank" href="https://nielsensupport.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_client_deployment_base_list.do"><font color="#fff">Client deployment All Dashboards</font></a>
+                         </li>
+                       </ul>
+                     </div> 
+                   </div> 
+                </div>
+      </div>
+ </div>]]></template>
+    </sp_widget>
+</record_update>

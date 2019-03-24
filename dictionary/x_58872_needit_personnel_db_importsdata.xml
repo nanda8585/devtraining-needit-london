@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="personnel db importsdata" max_length="40" name="x_58872_needit_personnel_db_importsdata" type="collection">
+        <element attributes="import_attribute_name=BC Planner,edge_encryption_enabled=true" label="BC Planner" max_length="40" name="u_bc_planner" type="string"/>
+        <element attributes="import_attribute_name=Location,edge_encryption_enabled=true" label="Location" max_length="40" name="u_location" type="string"/>
+        <element attributes="import_attribute_name=Manager_email,edge_encryption_enabled=true" label="Manager_email" max_length="40" name="u_manager_email" type="string"/>
+        <element attributes="import_attribute_name=Manage_ID,edge_encryption_enabled=true" label="Manage_ID" max_length="40" name="u_manage_id" type="string"/>
+        <element attributes="import_attribute_name=Manage_Namae,edge_encryption_enabled=true" label="Manage_Namae" max_length="40" name="u_manage_namae" type="string"/>
+        <element attributes="import_attribute_name=Mobile Number,edge_encryption_enabled=true" label="Mobile Number" max_length="40" name="u_mobile_number" type="string"/>
+        <element attributes="import_attribute_name=State,edge_encryption_enabled=true" label="State" max_length="40" name="u_state" type="string"/>
+        <element attributes="import_attribute_name=Uaser_name,edge_encryption_enabled=true" label="Uaser_name" max_length="40" name="u_uaser_name" type="string"/>
+        <element attributes="import_attribute_name=User_Email,edge_encryption_enabled=true" label="User_Email" max_length="40" name="u_user_email" type="string"/>
+        <element attributes="import_attribute_name=User name,edge_encryption_enabled=true" label="User name" max_length="40" name="u_user_name" type="string"/>
+        <element attributes="import_attribute_name=work Phone,edge_encryption_enabled=true" label="work Phone" max_length="40" name="u_work_phone" type="string"/>
+    </element>
+</database>

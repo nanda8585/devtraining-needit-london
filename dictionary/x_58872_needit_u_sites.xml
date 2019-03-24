@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="U_sites" max_length="40" name="x_58872_needit_u_sites" type="collection">
+        <element choice="1" display="true" label="Site" max_length="100" name="site" type="choice">
+            <choice/>
+        </element>
+        <element choice="1" label="Tite Type" max_length="40" name="tite_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Off-Site" value="Off-Site"/>
+                <element inactive_on_update="false" label="On-Site" value="On-Site"/>
+            </choice>
+        </element>
+    </element>
+</database>

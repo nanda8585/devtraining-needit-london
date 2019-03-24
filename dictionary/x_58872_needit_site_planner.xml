@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Site Planner" max_length="40" name="x_58872_needit_site_planner" type="collection">
+        <element display="true" label="Bc Planner" max_length="32" name="bc_planner" reference="sys_user" type="reference"/>
+        <element label="Site" max_length="32" name="site" reference="x_58872_needit_u_sites" type="reference"/>
+        <index name="index">
+            <element name="site"/>
+        </index>
+        <index name="index2">
+            <element name="bc_planner"/>
+        </index>
+    </element>
+</database>

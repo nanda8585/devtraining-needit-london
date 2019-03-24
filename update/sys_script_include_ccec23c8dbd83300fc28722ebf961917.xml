@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_58872_needit.Loading_user_Manager_Deetails</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>Loading_user_Manager_Deetails</name>
+        <script><![CDATA[var Loading_user_Manager_Deetails = Class.create();
+Loading_user_Manager_Deetails.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	
+	UserDetails: function()
+		{
+			var SysId = this.getParameter('sysparm_sysid');
+			var userRecord = new GlideRecord('sys_user');
+			userRecord.addQuery('sys_id',SysId);
+			userRecord.query();
+			var customArray = [];
+			var mgr_sys_id;
+			if(userRecord.next()) 
+			{ 
+				if(userRecord.getValue('user_name'))
+				customArray.push(userRecord.getValue('user_name'));
+				else
+					customArray.push(' ');
+				
+				if(userRecord.getValue('email'))
+				customArray.push(userRecord.getValue('email'));
+				else
+					customArray.push(' ');
+				
+				if(userRecord.getValue('manager'))
+				customArray.push(userRecord.getValue('manager'));
+				else
+					customArray.push('');
+				
+				mgr_sys_id=userRecord.getValue('manager');
+				
+			 }
+			var MgrRecord = new GlideRecord('sys_user');
+			MgrRecord.addQuery('sys_id',mgr_sys_id);
+			MgrRecord.query();
+			var count=0;
+			if(MgrRecord.next()) 
+			{ 
+				if(MgrRecord.getValue('email'))
+				customArray.push(MgrRecord.getValue('user_name'));
+
+				if(userRecord.getValue('email'))
+				customArray.push(MgrRecord.getValue('email'));
+				
+				count=count+1;
+				
+				
+			 }
+			if(count==0)
+				{
+				customArray.push('');
+				customArray.push('');
+				}
+			
+			var data = JSON.stringify(customArray);
+			return data;
+		},
+	
+	
+	
+	mgrDetails: function()
+		{
+			var SysId = this.getParameter('sysparm_sysid');
+			var userRecord = new GlideRecord('sys_user');
+			userRecord.addQuery('sys_id',SysId);
+			userRecord.query();
+			var customArray = [];
+			if(userRecord.next()) 
+			{ 
+				if(userRecord.getValue('user_name'))
+				customArray.push(userRecord.getValue('user_name'));
+				else
+					customArray.push(' ');
+				
+				if(userRecord.getValue('email'))
+				customArray.push(userRecord.getValue('email'));
+				else
+					customArray.push(' ');
+				
+				
+			 }
+			
+			var data = JSON.stringify(customArray);
+			return data;
+		},
+	
+	
+	
+
+    type: 'Loading_user_Manager_Deetails'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 18:43:18</sys_created_on>
+        <sys_id>ccec23c8dbd83300fc28722ebf961917</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Loading_user_Manager_Deetails</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_ccec23c8dbd83300fc28722ebf961917</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:36:02</sys_updated_on>
+    </sys_script_include>
+</record_update>

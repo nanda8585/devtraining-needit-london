@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_58872_needit.Loading_choice_list_from_loc</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>Loading_choice_list_from_loc</name>
+        <script><![CDATA[var Loading_choice_list_from_loc = Class.create();
+Loading_choice_list_from_loc.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	LocDetails: function()
+		{
+			var locRecord = new GlideRecord('cmn_location');
+			locRecord.orderByDesc('city');
+			locRecord.addActiveQuery();
+			locRecord.query();
+			
+			var customArray = [];
+			var count1=0;
+			while (locRecord.next()) 
+			{ 
+				
+				
+				if(count1 == 0 || (locRecord.getValue('city')!='' && locRecord.getValue('city') != customArray[count1-1]  ))
+					{
+				customArray.push(locRecord.getValue('city'));
+				count1=count1+1;
+					}
+				
+			 }
+			var data = JSON.stringify(customArray);
+			return data;
+		},
+	
+	
+	
+
+    type: 'Loading_choice_list_from_loc'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 20:12:38</sys_created_on>
+        <sys_id>d7468098db1c3300fc28722ebf961979</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Loading_choice_list_from_loc</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_d7468098db1c3300fc28722ebf961979</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 21:01:15</sys_updated_on>
+    </sys_script_include>
+</record_update>

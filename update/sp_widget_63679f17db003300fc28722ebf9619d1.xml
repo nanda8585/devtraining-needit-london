@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[
+function($scope, $rootScope) {
+  /* widget controller */
+  var c = this;	
+  $scope.IsInvisibleTab2 = true;
+  $scope.IsInvisibleTab4 = true;
+	$scope.IsInvisibleTabCont =  true;
+	$scope.IsInvisibleTabNisp =  true;
+	$scope.IsInvisibleTabNispARch =  true;
+	$scope.IsInvisibleTabNIS =  true;
+	$scope.IsInvisibleTabCD=true;
+	$scope.IsInvisibleTabBldDashbrd =  true;
+  $scope.IsInvisibleTabCntnDashbrd =  true;
+	$scope.IsInvisibleTabNISPDashbrd =  true; 
+	$scope.IsInvisibleTabNISDashbrd =  true;
+	$scope.IsInvisibleTabClntDplnmntDashbrd =  true;
+  $scope.myFunction = function(){
+		$scope.IsInvisibleTab1 =  true;
+		$scope.IsInvisibleTab2 =  false;
+		$scope.IsInvisibleTabCont =  true;
+		$scope.IsInvisibleTabNisp =  true;
+		$scope.IsInvisibleTabNIS =  true;
+		$scope.IsInvisibleTabCD=true;
+		var el =angular.element('#firstTab');
+		var e2=angular.element('#contentDesignTab');
+		var e3 =angular.element('#secondTab');
+		var e4=angular.element('#NISPTab'); 
+		var e5=angular.element('#NISTab');
+		var e6=angular.element('#ClientdplTab');
+		el.removeClass("active");
+		e2.removeClass("active");
+		e4.removeClass("active");
+		e5.removeClass("active");
+		e6.removeClass("active");
+    e3.addClass("active");
+  }
+	  $scope.myFunction1 = function(){
+		$scope.IsInvisibleTab1 =  false;
+		$scope.IsInvisibleTab2 =  true;
+		$scope.IsInvisibleTabCont =  true;
+		$scope.IsInvisibleTabNisp =  true;
+		$scope.IsInvisibleTabNIS =  true;
+		$scope.IsInvisibleTabCD=true;
+		var el =angular.element('#firstTab');
+		var e3 =angular.element('#secondTab');
+		var e2=angular.element('#contentDesignTab');
+		var e4=angular.element('#NISPTab'); 
+		var e5=angular.element('#NISTab');
+		var e6=angular.element('#ClientdplTab');
+		e2.removeClass("active");
+		e3.removeClass("active");
+		e4.removeClass("active");
+		e5.removeClass("active");
+		e6.removeClass("active");
+    el.addClass("active");
+  }
+		$scope.myFunctionCont = function(){
+		$scope.IsInvisibleTab1 =  true;
+		$scope.IsInvisibleTab2 =  true;
+		$scope.IsInvisibleTabNisp =  true;
+	  $scope.IsInvisibleTabCont =  false;
+		$scope.IsInvisibleTabNIS =  true;
+		$scope.IsInvisibleTabCD=true;
+		var el =angular.element('#firstTab');
+		var e3 =angular.element('#secondTab');
+		var e2=angular.element('#contentDesignTab');
+		var e4=angular.element('#NISPTab'); 
+		var e5=angular.element('#NISTab');
+		var e6=angular.element('#ClientdplTab');
+		el.removeClass("active");
+		e3.removeClass("active");
+		e4.removeClass("active");
+    e2.addClass("active");
+		e5.removeClass("active");
+	  e6.removeClass("active");
+  }
+		
+		$scope.myFunctionnisp = function(){
+		$scope.IsInvisibleTab1 =  true;
+		$scope.IsInvisibleTab2 =  true;
+	  $scope.IsInvisibleTabCont =  true;
+		$scope.IsInvisibleTabNIS =  true;
+		$scope.IsInvisibleTabCD=true;
+		$scope.IsInvisibleTabNisp =  false;
+		var el =angular.element('#firstTab');
+		var e3 =angular.element('#secondTab');
+		var e2=angular.element('#contentDesignTab');
+		var e4=angular.element('#NISPTab'); 
+		var e5=angular.element('#NISTab');
+		var e6=angular.element('#ClientdplTab');
+		el.removeClass("active");
+		e2.removeClass("active");
+    e3.removeClass("active");
+		e4.addClass("active");
+		e5.removeClass("active");
+		e6.removeClass("active");
+  }
+	
+		$scope.myFunctionNis = function(){
+		$scope.IsInvisibleTab1 =  true;
+		$scope.IsInvisibleTab2 =  true;
+	  $scope.IsInvisibleTabCont =  true;
+		$scope.IsInvisibleTabNisp =  true;
+		$scope.IsInvisibleTabCD=true;
+		$scope.IsInvisibleTabNIS =  false;
+		var el =angular.element('#firstTab');
+		var e3 =angular.element('#secondTab');
+		var e2=angular.element('#contentDesignTab');
+		var e4=angular.element('#NISPTab'); 
+		var e5=angular.element('#NISTab');
+		var e6=angular.element('#ClientdplTab');
+		el.removeClass("active");
+		e2.removeClass("active");
+    e3.removeClass("active");
+		e4.removeClass("active");
+		e6.removeClass("active");
+		e5.addClass("active");	
+  }
+		
+		$scope.myFunctionCD = function(){
+		$scope.IsInvisibleTab1 =  true;
+		$scope.IsInvisibleTab2 =  true;
+	  $scope.IsInvisibleTabCont =  true;
+		$scope.IsInvisibleTabNisp =  true;
+		$scope.IsInvisibleTabNIS =  true;
+		$scope.IsInvisibleTabCD=false;
+		var el =angular.element('#firstTab');
+		var e3 =angular.element('#secondTab');
+		var e2=angular.element('#contentDesignTab');
+		var e4=angular.element('#NISPTab'); 
+		var e5=angular.element('#NISTab');
+		var e6=angular.element('#ClientdplTab');
+		el.removeClass("active");
+		e2.removeClass("active");
+    e3.removeClass("active");
+		e4.removeClass("active");
+		e5.removeClass("active");
+		e6.addClass("active");
+  }
+		
+  $scope.myFunctionArchvNisp = function(){
+		$scope.IsInvisibleTabpipeln =  true;
+		$scope.IsInvisibleTabNispARch =  false;
+		//$scope.IsInvisibleTabCont =  true;
+		var el =angular.element('#thirdTab');
+		var e2 =angular.element('#fourthTab');
+		el.removeClass("active");
+    e2.addClass("active");
+  }
+	  $scope.myFunctionArchvPln = function(){
+		$scope.IsInvisibleTabpipeln =  false;
+		$scope.IsInvisibleTabNispARch =  true;
+		//$scope.IsInvisibleTabCont =  true;
+		var el =angular.element('#thirdTab');
+		var e2 =angular.element('#fourthTab');
+		e2.removeClass("active");
+    el.addClass("active");
+  }
+		$scope.myFunctionPplndashbrd = function(){
+		$scope.IsInvisibleTabpipelnDashbrd =  false;
+		$scope.IsInvisibleTabBldDashbrd =  true;
+		$scope.IsInvisibleTabNISPDashbrd =  true; 
+		$scope.IsInvisibleTabCntnDashbrd =  true;
+		$scope.IsInvisibleTabNISDashbrd =  true;
+	  $scope.IsInvisibleTabClntDplnmntDashbrd =  true;
+		var el =angular.element('#pipelineDashbrd');
+		var e3 =angular.element('#BuildDashbrd');
+		var e2 =angular.element('#ContentDashbrd');
+		var e4=angular.element('#NISPDashbrd');
+		var e5=angular.element('#NISDashbrd');
+	  var e6=angular.element('#ClntDplmntDashbrd');
+		e2.removeClass("active");
+	  e3.removeClass("active");
+	  e4.removeClass("active");
+	  e5.removeClass("active");
+		e6.removeClass("active");
+    el.addClass("active");
+  }
+	  $scope.myFunctionBldDashbrd = function(){
+		$scope.IsInvisibleTabpipelnDashbrd =  true;
+	  $scope.IsInvisibleTabCntnDashbrd =  true;
+		$scope.IsInvisibleTabNISPDashbrd =  true; 
+		$scope.IsInvisibleTabNISDashbrd =  true;
+		$scope.IsInvisibleTabClntDplnmntDashbrd =  true;
+		$scope.IsInvisibleTabBldDashbrd =  false;	
+		var el =angular.element('#pipelineDashbrd');
+		var e3 =angular.element('#BuildDashbrd');
+		var e2 =angular.element('#ContentDashbrd');
+		var e4=angular.element('#NISPDashbrd');
+		var e5=angular.element('#NISDashbrd');
+		var e6=angular.element('#ClntDplmntDashbrd');
+		el.removeClass("active");
+		e2.removeClass("active");
+	  e4.removeClass("active");
+		e5.removeClass("active");
+		e6.removeClass("active");
+    e3.addClass("active");
+  }
+		 $scope.myFunctionCntDashbrd = function(){
+		 $scope.IsInvisibleTabpipelnDashbrd =  true;
+		 $scope.IsInvisibleTabBldDashbrd =  true;
+	   $scope.IsInvisibleTabNISPDashbrd =  true; 
+	   $scope.IsInvisibleTabNISDashbrd =  true;
+     $scope.IsInvisibleTabClntDplnmntDashbrd =  true;
+		$scope.IsInvisibleTabCntnDashbrd =  false;
+		var el =angular.element('#pipelineDashbrd');
+		var e3 =angular.element('#BuildDashbrd');
+		var e2 =angular.element('#ContentDashbrd');
+	  var e4=angular.element('#NISPDashbrd');
+	  var e5=angular.element('#NISDashbrd');
+		var e6=angular.element('#ClntDplmntDashbrd');
+		el.removeClass("active");
+    e3.removeClass("active");
+		e4.removeClass("active");
+	  e5.removeClass("active");
+    e6.removeClass("active");
+	  e2.addClass("active");
+  }
+		$scope.myFunctionNISPDashbrd = function(){
+		$scope.IsInvisibleTabpipelnDashbrd =  true;
+		$scope.IsInvisibleTabBldDashbrd =  true;
+		$scope.IsInvisibleTabCntnDashbrd =  true; 
+		$scope.IsInvisibleTabNISDashbrd =  true;
+		$scope.IsInvisibleTabClntDplnmntDashbrd =  true;
+		$scope.IsInvisibleTabNISPDashbrd =  false; 
+		var el =angular.element('#pipelineDashbrd');
+		var e3 =angular.element('#BuildDashbrd');
+		var e2 =angular.element('#ContentDashbrd');
+		var e4=angular.element('#NISPDashbrd');
+		var e5=angular.element('#NISDashbrd');
+		var e6=angular.element('#ClntDplmntDashbrd');
+		el.removeClass("active");
+    e2.removeClass("active");
+	  e3.removeClass("active");
+		e5.removeClass("active");
+		e6.removeClass("active");
+		 e4.addClass("active");
+  }
+		
+		$scope.myFunctionNISDashbrd = function(){
+		$scope.IsInvisibleTabpipelnDashbrd =  true;
+		$scope.IsInvisibleTabBldDashbrd =  true;
+		$scope.IsInvisibleTabCntnDashbrd =  true; 
+		$scope.IsInvisibleTabNISPDashbrd =  true;
+		$scope.IsInvisibleTabNISDashbrd =  false; 
+		$scope.IsInvisibleTabClntDplnmntDashbrd =  true; 
+		var el =angular.element('#pipelineDashbrd');
+		var e3 =angular.element('#BuildDashbrd');
+		var e2 =angular.element('#ContentDashbrd');
+		var e4=angular.element('#NISPDashbrd');
+		var e5=angular.element('#NISDashbrd');
+		var e6=angular.element('#ClntDplmntDashbrd');
+		el.removeClass("active");
+    e2.removeClass("active");
+	  e3.removeClass("active");
+	  e4.removeClass("active");
+		e6.removeClass("active");
+		e5.addClass("active");
+  }
+		
+		$scope.myFunctionClntDashbrd = function(){
+		$scope.IsInvisibleTabpipelnDashbrd =  true;
+		$scope.IsInvisibleTabBldDashbrd =  true;
+		$scope.IsInvisibleTabCntnDashbrd =  true; 
+		$scope.IsInvisibleTabNISPDashbrd =  true;
+		$scope.IsInvisibleTabNISDashbrd =  true; 
+		$scope.IsInvisibleTabClntDplnmntDashbrd =  false; 
+		var el =angular.element('#pipelineDashbrd');
+		var e3 =angular.element('#BuildDashbrd');
+		var e2 =angular.element('#ContentDashbrd');
+		var e4=angular.element('#NISPDashbrd');
+		var e5=angular.element('#NISDashbrd');
+		var e6=angular.element('#ClntDplmntDashbrd');
+		el.removeClass("active");
+    e2.removeClass("active");
+	  e3.removeClass("active");
+	  e4.removeClass("active");
+		e5.removeClass("active");
+		e6.addClass("active");
+  }
+}
+
+
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>
+.tabContent {
+  padding:15px; 
+}
+
+.panel-group{
+  padding-top:30px;
+  background: #e0eee0;
+}
+#collapseOne, #collapseTwo, #collapseDashbrd{
+    background: #eee8dc;
+    z-index: 10;
+}
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>gtc2</id>
+        <internal>false</internal>
+        <link/>
+        <name>gtc2</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-13 08:48:46</sys_created_on>
+        <sys_id>63679f17db003300fc28722ebf9619d1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>gtc2</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sp_widget_63679f17db003300fc28722ebf9619d1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-13 08:50:03</sys_updated_on>
+        <template><![CDATA[<div ng-app="myApp" ng-controller="myCtrl" class="panel-group" id="accordion">
+  <h1 align="center"><b>Welcome to GTC Management System</b></h1>
+  				<div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">GTC Management System </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                   <ul class="nav nav-tabs">
+                    <li id="firstTab" class="active">
+                      <a id="1" ng-click="myFunction1()">Pipeline </a>
+                    
+                    </li>
+                     <li id="contentDesignTab">
+                      <a id="2"  ng-click="myFunctionCont()" >Content Design</a>                     
+                     </li>
+                    <li id="secondTab">
+                      <a id="3"  ng-click="myFunction()" >Build</a>                     
+                     </li>     
+                     <li id="NISPTab">
+                      <a id="4"  ng-click="myFunctionnisp()">NISP & Validation</a>                     
+                     </li>
+                     
+                     <li id="NISTab">
+                      <a id="5"  ng-click="myFunctionNis()">NIS</a>                     
+                     </li>
+                     
+                      <li id="ClientdplTab">
+                      <a id="5"  ng-click="myFunctionCD()">Client Deployment</a>                     
+                     </li>
+                  </ul>
+                    <div ng-hide="IsInvisibleTab1" class="tabContent" id="tabContent1">
+  										<ul>
+                       <li>	 
+                      		<a  target="_blank" href="https://nielsen.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_mgmt_system_base.do"> Pipeline New Record</a>
+                       </li>
+                        <li>	 
+                      		<a  target="_blank" href="https://nielsen.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_mgmt_system_base_list.do"> Pipeline All Records</a>
+                       </li>
+        
+                     </ul>	
+                      
+                  
+                  </div> 
+                  
+                  
+                  <div  ng-hide="IsInvisibleTabCont" class="tabContent" id="tabContent2">
+                     <ul>
+                       <li>	   
+                     			<a  target="_blank" href="https://nielsen.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_content_design_base_list.do">Content Design All Records</a>
+                       </li>
+                     </ul>
+                  </div>
+                   <div  ng-hide="IsInvisibleTab2" class="tabContent" id="tabContent3">
+                     <ul>
+                       <li>	   
+                     			<a  target="_blank" href="https://nielsen.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_build_process_base_list.do">Build All Records</a>
+                       </li>
+                     </ul>
+                  </div> 
+                
+                  
+                  <div  ng-hide="IsInvisibleTabNisp" class="tabnisp" id="tabContent4">
+                     <ul>
+                       <li>	   
+                     			<a  target="_blank" href="https://nielsen.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_nisp_base_list.do">NISP All Records</a>
+                       </li>
+       
+                     </ul>
+                  </div> 
+                  
+                  <div  ng-hide="IsInvisibleTabNIS" class="tabNIS" id="tabContent5">
+                     <ul>
+                       <li>	   
+                     			<a  target="_blank" href="https://nielsen.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_nis_base_list.do">NIS All Records</a>
+                       </li>
+                     </ul>
+                  </div> 
+                  
+                  <div  ng-hide="IsInvisibleTabCD" class="tabCD" id="tabContent6">
+                     <ul>
+                       <li>	   
+                     			<a  target="_blank" href="https://nielsen.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_gtc_client_deployment_base_list.do">Client Deployment All Records</a>
+                       </li>
+                     </ul>
+                  </div> 
+                  
+                </div>
+            </div>
+       </div> 
+       <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">GTC Management System - Archived Records</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul class="nav nav-tabs">
+                      <li id="thirdTab" class="active">
+                        <a id="3"  ng-click="myFunctionArchvPln()"> Pipeline Archived Records</a>
+                      </li>
+                      <li id="fourthTab">
+                        <a id="4" ng-click="myFunctionArchvNisp()">NISP Archived Records</a>
+                      </li>                   
+                   </ul>
+                   <div  ng-hide="IsInvisibleTabpipeln" class="tabContent" id="tabContent3">
+  											 <a  target="_blank" href="https://nielsen.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_deleted_records_gtc_mgmt_system_list.do"> Pipeline Archived All Records</a>
+									</div>  
+                  <div   ng-hide="IsInvisibleTabNispARch" class="tabContent" id="tabContent4">
+                     <ul>
+                       <li>
+                         <a  target="_blank" href="https://nielsen.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_deleted_records_gtc_nisp_base_list.do">NISP Archived Base Records</a>
+                       </li>
+                       <li>                  
+               					<a  target="_blank" href="https://nielsen.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_deleted_records_gtc_nisp_mono_multi_cubes_list.do">NISP Archived Mono/Multi Records</a>
+                       </li>
+                      <li>                  
+               					<a  target="_blank" href="https://nielsen.service-now.com/nav_to.do?uri=%2Fx_tnmu2_gtc_mgmt_s_tbl_deleted_records_gtc_nisp_supercubes_list.do">NISP Archived Super Cube Records</a>
+                       </li>
+                    </ul>
+                  </div> 
+                </div>
+            </div>
+      </div>
+  
+  <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseDashbrd">GTC Management System - Dashboards</a>
+                </h4>
+            </div>
+            <div id="collapseDashbrd" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul class="nav nav-tabs">
+                      <li id="pipelineDashbrd" class="active">
+                        <a id="3"  ng-click="myFunctionPplndashbrd()"> Pipeline</a>
+                      </li>
+                       
+                        <li id="ContentDashbrd" >
+                        <a id="3"  ng-click="myFunctionCntDashbrd()"> Content Design</a>
+                      </li>
+                       <li id="BuildDashbrd" >
+                        <a id="3"  ng-click="myFunctionBldDashbrd()"> Build</a>
+                      </li>                     
+     
+                      <li id="NISPDashbrd" >
+                        <a id="3"  ng-click="myFunctionNISPDashbrd()"> NISP & Validation</a>
+                      </li>
+                      
+                       <li id="NISDashbrd" >
+                        <a id="3"  ng-click="myFunctionNISDashbrd()"> NIS</a>
+                      </li>
+                      
+                         <li id="ClntDplmntDashbrd" >
+                        <a id="3"  ng-click="myFunctionClntDashbrd()"> Client Deployment</a>
+                      </li>
+                   </ul>
+                   <div  ng-hide="IsInvisibleTabpipelnDashbrd" class="tabdashboardppln" id="tabdashboardppln">
+  									<li>
+                     <a  target="_blank" href="http://spotint.nielsen.com:215/spotfire/wp/render/828758371977/analysis?file=/GTCBUYMS/Analysis/GTC Pipeline Dashboard"> Pipeline  All Dashboards</a>
+								         </li>	
+                  </div>  
+                  
+                  <div  ng-hide="IsInvisibleTabBldDashbrd" class="tabdashboardbld" id="tabdashboardbld">
+                    <li>
+  											 <a  target="_blank" href="http://spotint.nielsen.com:215/spotfire/wp/render/828758371977/analysis?file=/GTCBUYMS/Analysis/GTC Build Execution Summary"> Build  All Dashboards</a>
+		                      </li>
+                  </div>
+         
+                  
+                  <div  ng-hide="IsInvisibleTabCntnDashbrd" class="tabdashboardbld" id="tabdashboardcntn">
+                    <li>
+  											 <a  target="_blank" href="http://spotint.nielsen.com:215/spotfire/wp/render/828758371977/analysis?file=/GTCBUYMS/Analysis/GTC Content Design Dashboard"> Content Design All dashboards</a>
+             					 </li>
+                   
+									</div> 
+                  
+                  <div  ng-hide="IsInvisibleTabNISPDashbrd" class="tabdashboardNISP" id="tabdashboardNISP">
+                    <li>
+  											 <a  target="_blank" href="http://spotint.nielsen.com:215/spotfire/wp/render/828758371977/analysis?file=/GTCBUYMS/Analysis/GTC NISP Dashboards"> NISP All dashboards</a>
+		                      </li>
+                     
+                  </div>
+                  
+                   <div  ng-hide="IsInvisibleTabNISDashbrd" class="tabdashboardNIS" id="tabdashboardNIS">
+                    <li>
+  											 <a  target="_blank" > NIS  All Dashboards</a>
+		                      </li>
+                  </div>
+                  
+                   <div  ng-hide="IsInvisibleTabClntDplnmntDashbrd" class="tabdashboardDP" id="tabdashboardDP">
+                    <li>
+  											 <a  target="_blank" href="http://spotint.nielsen.com:215/spotfire/wp/render/828758371977/analysis?file=/GTCBUYMS/Analysis/End%20to%20End%20Cycle%20Time" > Client deployment  All Dashboards</a>
+		                      </li>
+                  </div>
+                </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
